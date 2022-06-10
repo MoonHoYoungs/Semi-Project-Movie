@@ -66,7 +66,7 @@ public class BoardController {
 	@PostMapping("/boardModify")
 	private ModelAndView boardModify(@ModelAttribute BoardDTO board) throws IllegalStateException, IOException {
 		mav= boardsvc.boardModify(board);
-		//dwdw
+
 
 		return mav;	
 		}
