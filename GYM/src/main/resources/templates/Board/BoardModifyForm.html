@@ -13,15 +13,15 @@
 </head>
 <body>
 
-	<form action="BoardModify" method="POST" enctype="multipart/form-data">
+	<form action="boardModify" method="POST" enctype="multipart/form-data">
 		<table>
 			<caption>GYM Modify</caption>
 
 
 			<tr>
-			<th th:text="${Modify.boardNo}"></th>
+			<th th:text="${boardModify.boardNo}"></th>
 			<th>번 게시글 수정</th>
-				<td><input type="hidden" name="boardNo" th:value="${Modify.boardNo}" />
+				<td><input type="hidden" name="boardNo" th:value="${boardModify.boardNo}" />
 					<br/></td>
 			</tr>
 
@@ -44,8 +44,8 @@
 
 			<tr>
 				<th>작성자</th>
-				<th th:text="${Modify.boardWriter}"></th>
-				<td><input type="hidden" name="boardWriter" th:value="${Modify.boardWriter}" /> <br /></td>
+				<th th:text="${boardModify.boardWriter}"></th>
+				<td><input type="hidden" name="boardWriter" th:value="${boardModify.boardWriter}" /> <br /></td>
 			</tr>
 
 			<tr>
@@ -78,7 +78,7 @@
 
 
 
-	</table>
+
 
 
 

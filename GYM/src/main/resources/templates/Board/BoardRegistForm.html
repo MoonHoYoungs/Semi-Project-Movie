@@ -37,7 +37,7 @@
 
 			<tr>
 				<th>작성자</th>
-				<td><input type="text" name="boardWriter" /> <br /></td>
+				<td><input type="text" name="boardWriter" th:value="${session.login.memberId}" /> <br/></td>
 			</tr>
 
 			<tr>

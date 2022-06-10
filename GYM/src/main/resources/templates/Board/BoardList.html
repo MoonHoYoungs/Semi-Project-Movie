@@ -9,13 +9,13 @@
 <title>타이틀</title>
 <meta name="date" content="2022.05.25">
 <link rel-"shortcut icom" href="#">
-<title>책임짐 게시글 작성 페이지</title>
+<title>GYM List</title>
 </head>
 <body>
 
 
 <table>
-<caption>GYM List</caption>
+<caption>책임짐 게시글 작성 페이지</caption>
 
 <tr>
 
@@ -31,7 +31,7 @@
 
 <tr th:each="list : ${boardList}">
 <td th:text="${list.boardNo}"></td>
-<td><a th:href="@{BoardView(boardNo=${list.boardNo})}" th:text="${list.boardTitle}"></a></td>
+<td><a th:href="@{boardView(boardNo=${list.boardNo})}" th:text="${list.boardTitle}"></a></td>
 <td th:text="${list.boardWriter}"></td>
 <td th:text="${list.boardType}"></td>
 
@@ -45,6 +45,7 @@
 
 
 <button onclick = "location.href = 'boardRegistForm'">게시글 작성</button>
+
 <button onclick ="history.back(-1);">뒤로가기</button>
 
 

@@ -116,7 +116,7 @@ public class BoardServiceImpl implements BoardService {
 		int result = boarddao.boardModify(board);
 		if (result > 0) {
 			
-			mav.setViewName("Board/BoardView");
+			mav.setViewName("redirect:/boardList");
 		} else {
 			mav.setViewName("index");
 		}

@@ -6,7 +6,7 @@
 
 
 <select id="boardList" resultType="board">
-SELECT * FROM BOARD
+SELECT * FROM BOARD ORDER BY BOARDNO ASC
 </select>
 
 <insert id="boardRegist" parameterType="board">
@@ -21,7 +21,7 @@ UPDATE BOARD SET BOARDHITS = BOARDHITS+1 WHERE BOARDNO=#{boardNo}
 SELECT * FROM BOARD WHERE BOARDNO =#{boardNo}
 </select>
 
-<update id="BoardModify" parameterType="board">
+<update id="boardModify" parameterType="board">
 UPDATE BOARD SET BOARDTYPE=#{boardType}, BOARDNOTICE=#{boardNotice}, BOARDTITLE=#{boardTitle}, BOARDWRITER=#{boardWriter},BOARDCONTENT=#{boardContent},BOARDUPLOADFILENAME=#{boardUploadFileName} WHERE BOARDNO =#{boardNo}
 </update>
 
