@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org/%22%3E">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="생로병사"/>
+<meta name="description" content="해당 html에 대한 설명"/>
+<title>타이틀</title>
+<meta name="date" content="2022.05.25">
+<link rel-"shortcut icom" href="#">
+<title>책임짐 게시글 작성 페이지</title>
+</head>
+<body>
+
+
+<table>
+<caption>GYM View</caption>
+
+<tr>
+<th>게시글 번호</th>
+<td th:text="${view.boardNo}"></td>
+</tr>
+<tr>
+<th>글머리</th>
+<td th:text="${view.boardType}"></td>
+</tr>
+
+<tr>
+<th>공지사항 여부</th>
+<td th:text="${view.boardNotice}"></td>
+</tr>
+
+<tr>
+<th>작성 날자</th>
+<td th:text="${view.boardDate}"></td>
+</tr>
+
+<tr>
+<th>글제목</th>
+<td th:text="${view.boardTitle}"></td>
+</tr>
+
+<tr>
+<th>작성자</th>
+<td th:text="${view.boardWriter}"></td>
+</tr>
+
+<tr>
+<th>글 내용</th>
+<td th:text="${view.boardContent}"></td>
+</tr>
+
+<tr>
+<th>프로필 사진</th>
+<td><img th:src="@{uploadfile/{aa}(aa=${view.boardUploadFileName})}" style="width:200px;"></td>
+</tr>
+
+
+<tr>
+<th>조회수</th>
+<td th:text="${view.boardHits}"></td>
+</tr>
+
+
+
+
+</table>
+
+
+<button th:onclick ="|location.href ='@{BoardNodifyForm(boardNo=${view.boardNo})}'|">게시글 수정페이지 이동</button>
+<button onclick ='location.href = "BoardDelete"'>게시글 삭제</button>
+<button onclick ="history.back(-1);">뒤로가기</button>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset=" UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="생로병사"/>
+    <meta name="description" content="trainingPlanView"/>
+    <title>책임GYM</title>
+</head>
+<body>
+<table>
+    <caption>견적상세보기</caption>
+    <tr>
+        <th>견적코드</th>
+        <td th:text="${trainingPlanView.trainingPlanCode}"></td>
+    </tr>
+    <tr>
+        <th>아이디</th>
+        <td th:text="${trainingPlanView.trainingPlanId}"></td>
+    </tr>
+    <tr>
+        <th>운동목적</th>
+        <td th:text="${trainingPlanView.trainingPlanPurpose}"></td>
+    </tr>
+    <tr>
+        <th>등급</th>
+        <td th:text="${trainingPlanView.trainingPlanGrade}"></td>
+    </tr>
+    <tr>
+        <th>운동루틴</th>
+        <td th:text="${trainingPlanView.trainingPlanMyRoutineCode}"></td>
+    </tr>
+    <tr>
+        <th>식단</th>
+        <td th:text="${trainingPlanView.trainingPlanMyMealCode}"></td>
+    </tr>
+
+</table>
+</body>
+</html>

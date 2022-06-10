@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gym.GYM.trainingplan.dao.TrainingPlanDAO">
+
+    <insert id="trainingPlanWrite" parameterType="TrainingPlan">
+        INSERT INTO TRAININGPLAN VALUES('TRA' || TRAININGPLAN_SEQ.NEXTVAL, #{trainingPlanId}, #{trainingPlanPurpose}, #{trainingPlanGrade}, #{trainingPlanMyRoutineCode}, #{trainingPlanMyMealCode})
+    </insert>
+
+    <select id="trainingPlanView" parameterType="String" resultType="TrainingPlan">
+        SELECT * FROM TRAININGPLAN WHERE TRAININGPLANCODE = #{trainingPlanCode}
+    </select>
+
+    <select id="trainingPlanList" resultType="TrainingPlan">
+        SELECT * FROM TRAININGPLAN WHERE TRAININGPLANID = 'MHJ'
+    </select>
+
+    <update id="trainingPlanModify" parameterType="TrainingPlan">
+        UPDATE TRAININGPLAN SET TRAININGPLANID=#{trainingPlanId}, TRAININGPLANGRADE=#{trainingPlanGrade}, TRAININGPLANPURPOSE=#{trainingPlanPurpose},
+                                TRAININGPLANMYROUTINECODE=#{trainingPlanMyRoutineCode},TRAININGPLANMYMEALCODE=#{trainingPlanMyMealCode}
+                                WHERE TRAININGPLANCODE = #{trainingPlanCode}
+    </update>
+
+    <delete id="trainingPlanDelete" parameterType="String">
+        DELETE FROM TRAININGPLAN WHERE TRAININGPLANCODE = #{trainingPlanCode}
+    </delete>
+</mapper>

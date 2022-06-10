@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="junlazy"/>
+    <meta name="description" content="inputBoot index"/>
+    <title>Spring Boot Index</title>
+</head>
+<body>
+<form action="companyRegist" method="POST" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td><input type="hidden" name="companyCode"></td>
+        </tr>
+        <tr>
+            <td><input type="hidden" name="companyId" value="coso01057"/></td>
+        </tr>
+        <tr>
+            <th>기업 상세설명</th>
+            <td><textarea cols="20" rows="20" name="companyComment"></textarea></td>
+        </tr>
+        <tr>
+            <th>기업 사진</th>
+            <td><input type="file" name="companyPhoto"></td>
+        </tr>
+        <tr>
+            <th>기업 시설</th>
+            <td><input type="text" name="companyEquipment"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="가입"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="reset" value="다시 작성"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gym.GYM.member.dao.MemberDAO">
+
+<insert id = "memberRegist" parameterType = "member">
+	INSERT INTO MEMBER VALUES(#{memberName}, #{memberId}, #{memberPw}, #{memberAddress}, #{memberPhone}, #{memberGender}, #{memberBirth}, #{memberHeight, jdbcType = VARCHAR}, #{memberWeight, jdbcType = VARCHAR}, #{memberProfileName, jdbcType = VARCHAR}, #{memberCompanyName, jdbcType = VARCHAR}, #{memberRole})
+</insert>
+
+<select id = "memberCount" resultType = "int">
+	SELECT COUNT(*) FROM MEMBER
+</select>
+
+<select id = "memberList" parameterType = "paging" resultType = "member">
+	SELECT * FROM MEMBERLIST WHERE RN BETWEEN #{startRow} AND #{endRow}
+</select>
+
+<select id = "memberView" parameterType = "String" resultType = "member">
+	SELECT * FROM MEMBER WHERE MEMBERID = #{memberId}
+</select>
+
+<update id = "memberModify" parameterType = "member">
+	UPDATE MEMBER SET MEMBERNAME = #{memberName}, MEMBERPW = #{memberPw}, MEMBERADDRESS = #{memberAddress}, MEMBERPHONE = #{memberPhone}, MEMBERGENDER = #{memberGender}, MEMBERHEIGHT = #{memberHeight}, MEMBERWEIGHT = #{memberWeight}, MEMBERPROFILENAME = #{memberProfileName}, MEMBERCOMPANYNAME={memberCompanyName} WHERE MEMBERID = #{memberId}
+</update>
+
+<delete id = "memberDelete" parameterType = "String">
+	DELETE FROM MEMBER WHERE MEMBERID = #{memberId}
+</delete>
+
+<select id = "memberSignIn" parameterType = "member" resultType = "member">
+	SELECT * FROM MEMBER WHERE MEMBERID = #{memberId} AND MEMBERPW = #{memberPw}
+</select>
+
+<select id = "mEpw" parameterType = "String" resultType = "String">
+	SELECT MEMBERPW FROM MEMBER WHERE MEMBERID = #{memberId}
+</select>
+</mapper>

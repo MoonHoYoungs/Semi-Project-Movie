@@ -1,0 +1,28 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gym.GYM.board.dao.BoardDAO">
+
+
+
+<select id="boardList" resultType="board">
+SELECT * FROM BOARD
+</select>
+
+<insert id="boardRegist" parameterType="board">
+INSERT INTO BOARD VALUES(SEQ_BOARD.NEXTVAL,#{boardType},#{boardNotice},SYSDATE,#{boardTitle},#{boardWriter},#{boardContent},#{boardUploadFileName},0) 
+</insert>
+
+<update id="count" parameterType="int">
+UPDATE BOARD SET BOARDHITS = BOARDHITS+1 WHERE BOARDNO=#{boardNo}  
+</update>
+
+<select id="boardView" parameterType="int" resultType="board">
+SELECT * FROM BOARD WHERE BOARDNO =#{boardNo}
+</select>
+
+<update id="BoardModify" parameterType="board">
+UPDATE BOARD SET BOARDTYPE=#{boardType}, BOARDNOTICE=#{boardNotice}, BOARDTITLE=#{boardTitle}, BOARDWRITER=#{boardWriter},BOARDCONTENT=#{boardContent},BOARDUPLOADFILENAME=#{boardUploadFileName} WHERE BOARDNO =#{boardNo}
+</update>
+
+</mapper>

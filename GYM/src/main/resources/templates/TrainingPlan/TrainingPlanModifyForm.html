@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset=" UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="생로병사"/>
+    <meta name="description" content="TrainingPlanModifyForm"/>
+    <title>책임GYM</title>
+</head>
+<body>
+<form action="trainingPlanModify" method="POST" enctype="multipart/form-data">
+    <table>
+        <caption>운동견적수정</caption>
+        <tr>
+            <th>견적코드</th>
+            <td th:text="${trainingPlanModifyForm.trainingPlanCode}"></td>
+        </tr>
+        <tr>
+            <td><input type="hidden" name="trainingPlanId" th:value="${trainingPlanModifyForm.trainingPlanId}"></td>
+        </tr>
+        <tr>
+            <th>운동목적</th>
+            <td><input type="text" name="trainingPlanPurpose"/></td>
+        </tr>
+        <tr>
+            <th>등급</th>
+            <td><input type="text" name="trainingPlanGrade"/></td>
+        </tr>
+        <tr>
+            <th>운동루틴</th>
+            <td><input type="text" name="trainingPlanMyRoutineCode"/></td>
+        </tr>
+        <tr>
+            <th>식단</th>
+            <td><input type="text" name="trainingPlanMyMealCode"/></td>
+        </tr>
+        <tr th:colspan="2">
+            <input type="submit" value="수정"/>
+            <input type="reset" value="다시작성"/>
+        </tr>
+        <td><input type="hidden" name="trainingPlanCode" th:value="${trainingPlanModifyForm.trainingPlanCode}"/></td>
+    </table>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org/%22%3E">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="생로병사" />
+<meta name="description" content="해당 html에 대한 설명" />
+<title>타이틀</title>
+<meta name="date" content="2022.05.25">
+<link rel-"shortcut icom" href="#">
+<title>책임짐 게시글 작성 페이지</title>
+</head>
+<body>
+
+	<form action="boardRegist" method="POST" enctype="multipart/form-data">
+		<table>
+			<caption>GYM Insert</caption>
+
+
+
+
+			<tr>
+				<th>글머리</th>
+				<td><input type="text" name="boardType" /> <br /></td>
+			</tr>
+
+			<tr>
+				<th>공지사항 여부</th>
+				<td><input type="text" name="boardNotice" /> <br /></td>
+			</tr>
+
+			<tr>
+				<th>제목</th>
+				<td><input type="text" name="boardTitle" /> <br /></td>
+			</tr>
+
+			<tr>
+				<th>작성자</th>
+				<td><input type="text" name="boardWriter" /> <br /></td>
+			</tr>
+
+			<tr>
+				<th>글내용</th>
+				<td><textarea name="boardContent" >
+				
+				</textarea> <br /></td>
+			</tr>
+
+			<tr>
+				<th>첨부파일</th>
+				<td><input type="file" name="boardFile" /> <br /></td>
+			</tr>
+
+
+
+			<tr>
+				<th><input type="submit" value="작성" /> <br /></th>
+				<th><input type="reset" value="지우기" /> <br /></th>
+
+			</tr>
+
+
+		</table>
+
+
+
+	</form>
+
+
+
+
+
+	<button onclick="history.back(-1);">뒤로가기</button>
+
+
+
+
+
+
+</body>
+</html>

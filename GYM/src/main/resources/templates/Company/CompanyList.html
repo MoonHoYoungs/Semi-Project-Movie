@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="junlazy"/>
+    <meta name="description" content="inputBoot index"/>
+    <title>기업 목록 페이지</title>
+</head>
+<body>
+<table>
+    <caption>기업 목록</caption>
+    <tr>
+        <th>기업코드</th>
+        <th>기업아이디</th>
+        <th>기업 상세설명</th>
+        <th>기업 사진</th>
+        <th>기업 별점</th>
+        <th>기업 시설</th>
+    </tr>
+    <tr>
+    <tr th:each="company:${company}">
+        <td><a th:href="@{companyView(companyCode=${company.companyCode})}" th:text="${company.companyCode}"></a></td>
+        <td th:text="${company.companyId}"></td>
+        <td th:text="${company.companyComment}"></td>
+        <td th:text="${company.companyPhotoName}"></td>
+        <td th:text="${company.companyRate}"></td>
+        <td th:text="${company.companyEquipment}"></td>
+        <td><a th:href="@{companyModifyForm(companyCode=${company.companyCode})}" th:text="'수정'"></a></td>
+        <td><a th:href="@{companyDelete(companyCode=${company.companyCode})}" th:text="'삭제'"></a></td>
+    </tr>
+    </tr>
+</table>
+</body>
+</html>

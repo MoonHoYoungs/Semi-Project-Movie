@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="junlazy"/>
+    <meta name="description" content="inputBoot index"/>
+    <title>기업 상세보기 페이지</title>
+</head>
+<body>
+<table>
+    <caption>기업 상세보기</caption>
+    <tr>
+        <th>기업 코드</th>
+        <td th:text="${view.companyCode}"></td>
+    </tr>
+    <tr>
+        <th>기업 아이디</th>
+        <td th:text="${view.companyId}"></td>
+    </tr>
+    <tr>
+        <th>기업 상세설명</th>
+        <td th:text="${view.companyComment}"></td>
+    </tr>
+    <tr>
+        <th>기업 사진</th>
+        <td><img th:src="@{/CompanyPhoto/{photo}(${view.companyPhotoName})}" style="width:200px;"/></td>
+    </tr>
+    <tr>
+        <th>기업 평점</th>
+        <td th:text="${view.companyRate}"></td>
+    </tr>
+    <tr>
+        <th>기업 시설</th>
+        <td th:text="${view.companyEquipment}"></td>
+    </tr>
+</table>
+</body>
+</html>

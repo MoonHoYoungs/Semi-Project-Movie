@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gym.GYM.company.dao.CompanyDAO">
+
+
+    <insert id="companyRegist" parameterType="company">
+        INSERT INTO COMPANY VALUES ('COM' || COMPANY_SEQ.NEXTVAL, #{companyId}, #{companyComment}, #{companyPhotoName}, 0, #{companyEquipment})
+    </insert>
+    <select id="companyList" resultType="company">
+        SELECT * FROM COMPANY
+    </select>
+    <select id="companyCount" resultType="int">
+        SELECT COUNT(*) FROM COMPANY
+    </select>
+    <select id="companyView" parameterType="String" resultType="company">
+        SELECT * FROM COMPANY WHERE COMPANYCODE = #{companyCode}
+    </select>
+    <update id="companyModify" parameterType="company">
+        UPDATE COMPANY SET COMPANYID=#{companyId}, COMPANYCOMMENT=#{companyComment}, COMPANYPHOTONAME=#{companyPhotoName}, COMPANYEQUIPMENT=#{companyEquipment}
+        WHERE COMPANYCODE=#{companyCode}
+    </update>
+    <delete id="companyDelete" parameterType="company">
+        DELETE FROM COMPANY WHERE COMPANYCODE=#{companyCode}
+    </delete>
+
+<!--  처음 기업 등록할 때 시퀀스 사용해서 companyCode 문자열 + 숫자로 받기 해야함.  -->
+</mapper>

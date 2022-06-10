@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org/%22%3E">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="HGY"/>
+<meta name="description" content="기업 회원가입 페이지"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원 상세보기</h1>
+	
+	<table>
+		<tr>
+			<th>아이디</th>
+			<td th:text ="${memberView.memberId}"></td>
+		</tr>
+		<tr>
+			<th>이름</th>
+			<td th:text ="${memberView.memberName}"></td>
+		</tr>
+		<tr>
+			<th>주소</th>
+			<td th:text ="${memberView.memberAddress}"></td>
+		</tr>
+		<tr>
+			<th>연락처</th>
+			<td th:text ="${memberView.memberPhone}"></td>
+		</tr>
+		<tr>
+			<th>성별</th>
+			<td th:text ="${memberView.memberGender}"></td>
+		</tr>
+		<tr>
+			<th>생년월일</th>
+			<td th:text ="${memberView.memberBirth}"></td>
+		</tr>
+		<tr>
+			<th>키</th>
+			<td th:text ="${memberView.memberHeight}"></td>
+		</tr>
+		<tr>
+			<th>몸무게</th>
+			<td th:text ="${memberView.memberWeight}"></td>
+		</tr>
+		
+		<tr th:if = "${memberView.memberRole == 'Enterprise'}">
+			<th>기업명</th>
+			<td th:text ="${memberView.memberCompanyName}"></td>
+		</tr>
+		
+		<tr>
+			<th>프로필 사진</th>
+			<td><img th:src ="@{/profile/}+${memberView.memberProfileName}"/></td>
+		</tr>
+		
+		
+		<tr>
+		<td><button th:if = "${session.login.memberId == memberView.memberId}" th:onclick = "|location.href='@{memberModifyForm(memberId=${session.login.memberId})}'|">회원 수정</button></td>
+		<td><button th:if = "${session.login.memberId == memberView.memberId}" th:onclick = "|location.href='@{memberDelete(memberId=${session.login.memberId})}'|">회원 삭제</button></td>
+		
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset=" UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="생로병사"/>
+    <meta name="description" content="TrainingPlanList"/>
+    <title>책임GYM</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>아이디</th>
+            <th>운동목적</th>
+            <th>등급</th>
+            <th>운동루틴</th>
+            <th>식단</th>
+        </tr>
+        <tr th:each="trainingPlanList : ${trainingPlanList}">
+            <td><a th:href="@{trainingPlanView(trainingPlanCode=${trainingPlanList.trainingPlanCode})}" th:text="${trainingPlanList.trainingPlanCode}"></a></td>
+            <td th:text="${trainingPlanList.trainingPlanId}">아이디</td>
+            <td th:text="${trainingPlanList.trainingPlanPurpose}">운동목적</td>
+            <td th:text="${trainingPlanList.trainingPlanGrade}">등급</td>
+            <td th:text="${trainingPlanList.trainingPlanMyRoutineCode}">운동루틴</td>
+            <td th:text="${trainingPlanList.trainingPlanMyMealCode}">식단</td>
+            <td><a th:href="@{trainingPlanModifyForm(trainingPlanCode=${trainingPlanList.trainingPlanCode})}" th:text="수정"></a></td>
+            <td><a th:href="@{trainingPlanDelete(trainingPlanCode=${trainingPlanList.trainingPlanCode})}" th:text="삭제"></a></td>
+        </tr>
+    </table>
+
+</body>
+</html>
