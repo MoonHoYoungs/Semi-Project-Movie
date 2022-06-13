@@ -16,7 +16,7 @@ import com.gym.GYM.board.service.BoardService;
 @Controller
 public class BoardController {
 	
-	// ssㄴㄴㄴㄴㄴ
+	//테스트
 	private BoardService boardsvc;
 
 	private ModelAndView mav = new ModelAndView();
