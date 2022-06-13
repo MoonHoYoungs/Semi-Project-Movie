@@ -15,8 +15,8 @@ import com.gym.GYM.board.service.BoardService;
 
 @Controller
 public class BoardController {
-
-	@Autowired
+	
+	// ssㄴㄴㄴㄴ
 	private BoardService boardsvc;
 
 	private ModelAndView mav = new ModelAndView();
